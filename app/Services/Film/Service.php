@@ -17,7 +17,12 @@ class Service
             $data['url_poster'] = Storage::disk('public')->put('/images', $data['url_poster']);
         }
 
+        $gendres = $data['genre_id'];
+        unset($data['genre_id']);
+
         $film->update($data);
+        $film->genres()->sync($gendres);
+
     }
 
     public function create($data)
