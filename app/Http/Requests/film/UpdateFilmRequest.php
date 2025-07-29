@@ -27,7 +27,7 @@ class UpdateFilmRequest extends FormRequest
             'name' => 'required|string|max:50',
             'is_published' => 'integer',
             'url_poster' => 'image|mimes:jpeg,png,jpg|max:1024',
-            'genre_id' => ''
+            'genre_id' => 'required'
         ];
     }
 }

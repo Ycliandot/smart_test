@@ -29,6 +29,9 @@
                         <option value="{{ $genre->id }}" {{ in_array($genre->id, $film->genres->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $genre->name }}</option>
                     @endforeach
                 </select>
+                @error('genre_id')
+                <p class="alert alert-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="is_published" class="form-label">Published</label>

@@ -19,6 +19,9 @@
                         <option value="{{ $genre->id }}">{{ $genre->name }}</option>
                     @endforeach
                 </select>
+                @error('genre_id')
+                <p class="alert alert-danger">{{ $message }}</p>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="is_published" class="form-label">Published</label>
