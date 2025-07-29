@@ -103,8 +103,11 @@ class FilmController extends Controller
     }
 
 
-    public function setActive()
+    public function setActive(Film $film)
     {
-        dd(__METHOD__);
+        $is_published = !$film->is_published;
+        $film->update(['is_published' => $is_published]);
+
+        return redirect()->route('film.index');
     }
 }

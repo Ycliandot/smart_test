@@ -19,7 +19,6 @@ Route::post('/films', [\App\Http\Controllers\FilmController::class, 'store'])->n
 Route::get('/films/{film}/edit', [\App\Http\Controllers\FilmController::class, 'edit'])->name('film.edit');
 Route::patch('/films/{film}', [\App\Http\Controllers\FilmController::class, 'update'])->name('film.update');
 Route::delete('/films/{film}', [\App\Http\Controllers\FilmController::class, 'destroy'])->name('film.destroy');
-
-Route::get('/film/set-active', [\App\Http\Controllers\FilmController::class, 'setActive'])
-    ->name('film.set-active');
+Route::get('/films/{film}/set-active', [\App\Http\Controllers\FilmController::class, 'setActive'])
+    ->name('film.set_active');
 

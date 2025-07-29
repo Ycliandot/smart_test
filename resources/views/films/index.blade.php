@@ -25,7 +25,8 @@
                 <td>{{ $film->name}}</td>
                 <td>{{ $film->url_poster}}</td>
                 <td>{{ $film->genres->pluck('name') }}</td>
-                <td>{{ $film->is_published}}</td>
+{{--                <td>{{ $film->is_published}}</td>--}}
+                <td><a href="{{ route('film.set_active', $film->id) }}" class="btn btn-secondary">{{ $film->is_published == 0 ? 'Publish' : 'Unpublish' }}</a></td>
                 <td><a href="{{ route('film.edit', $film->id) }}" class="btn btn-secondary">Edit</a></td>
                 <td>
                     <form action="{{ route('film.destroy', [$film->id, 'page=' . $films->currentPage()]) }}" method="post">
