@@ -33,8 +33,8 @@
             <div class="mb-3">
                 <label for="is_published" class="form-label">Published</label>
                 <select class="form-select" name="is_published" id="is_published">
-                    <option value="0" selected>No</option>
-                    <option value="1">Yes</option>
+                    <option value="0" {{ $film->is_published == 0 ? 'selected' : '' }}>No</option>
+                    <option value="1" {{ $film->is_published == 1 ? 'selected' : '' }}>Yes</option>
                 </select>
                 @error('is_published')
                 <p class="alert alert-danger">{{ $message }}</p>
