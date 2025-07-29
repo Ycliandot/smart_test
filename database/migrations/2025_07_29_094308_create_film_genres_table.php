@@ -19,11 +19,12 @@ class CreateFilmGenresTable extends Migration
             $table->unsignedBigInteger('genre_id');
             $table->timestamps();
 
-//            $table->index('film_id', 'film_genre_film_idx');
-//            $table->foreign('film_id', 'film_genre_film_fk')->on('films')->references('id');
-//
-//            $table->index('genre_id', 'film_genre_genre_idx');
-//            $table->foreign('genre_id', 'film_genre_genre_fk')->on('genres')->references('id');
+            $table->index('film_id', 'film_genre_film_idx');
+            $table->foreign('film_id', 'film_genre_film_fk')->on('films')->references('id')
+                ->onDelete('cascade');
+
+            $table->index('genre_id', 'film_genre_genre_idx');
+            $table->foreign('genre_id', 'film_genre_genre_fk')->on('genres')->references('id');
         });
     }
 
